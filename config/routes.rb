@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
 
   root to: 'toppages#index'
-
+  get 'likes', to: 'toppages#likes'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
@@ -30,4 +30,5 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
 
   resources :likes, only: [:create, :destroy]
+
 end
